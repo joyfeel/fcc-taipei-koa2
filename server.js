@@ -1,11 +1,15 @@
 import Koa from 'koa'
+import path from 'path'
 import bodyParser from 'koa-bodyparser';
 import logger from 'koa-logger';
 import session from 'koa-session';
 import serve from 'koa-static'
 import convert from 'koa-convert';
-import router from './router';
-import path from 'path'
+
+import Router from 'koa-router'
+import indexRouter from './router/index';
+import userRouter from './router/user';
+import loginRouter from './router/login';
 
 import webpack from 'webpack'
 import WebpackDevMiddleware from "koa-webpack-dev-middleware"
@@ -35,8 +39,8 @@ app.use(convert(bodyParser()));
 app.keys = ['some secret hurr'];
 app.use(convert(session(app)));
 
-app
-  .use(router.routes())
-  .use(router.allowedMethods());
+app.use(indexRouter.routes(), indexRouter.allowedMethods());
+app.use(userRouter.routes(), userRouter.allowedMethods());
+app.use(loginRouter.routes(), loginRouter.allowedMethods());
 
 export default app
