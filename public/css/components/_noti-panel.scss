@@ -1,0 +1,16 @@
+.noti-panel {
+  width: 350px;
+  position: absolute;
+  top: 400px;
+  right: 0px;
+  z-index: 10;
+  background-color: #fff;
+  box-shadow: 1px 1px 4px 0 #4a4a4a;
+
+  .icon-cancel-1  {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    cursor: pointer;
+  }//.icon-cancel-1
+}//.noti-panel

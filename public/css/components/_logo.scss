@@ -1,0 +1,37 @@
+.logo {
+  a {
+//    display: block;
+    @include center($top:2px);
+    width: 164px;
+    height: 24px;
+//    background: url('../images/freecodecamp_logo.svg') no-repeat center;
+//    background-size: contain;
+    @include animated($delay: .85s);
+    @include bkImg($img:'../images/freecodecamp_logo.svg', $bgSize:contain)
+  } //a
+//  span {
+//    width: 150px;
+//    color: #DDC9A1;
+//    line-height: 37px;
+//    text-align: center;
+//    font-size: 18px;
+//    @extend %center;
+//    @extend %animated;
+//    opacity: 0;
+//    animation-delay: .85s;
+//    -webkit-animation-delay: .85s;
+//    -webkit-animation-duration: 1.2s;
+//    animation-duration: 1.2s;
+//    animation-fill-mode: backwards;
+//    -webkit-animation-fill-mode: backwards;
+//    top: 2px;
+//  }//span
+}//.logo
+
+
+.login-status .logo a {
+  top: 0;
+  right: inherit;
+  height: 45px;
+  left: 5px;
+}

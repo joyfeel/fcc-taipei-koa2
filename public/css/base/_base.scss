@@ -1,0 +1,77 @@
+body, html {
+  font-size: 16px;
+  font-family: Helvetica ,'Merriweather', menlo, sans-serif; //300, 400, 700
+  /* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+%center {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+%bkImg {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+/*clearfix*/
+.cf { zoom: 1;}
+.cf:before, .cf:after { 
+  content: " ";
+  display: table;
+}
+.cf:after { clear: both;}
+
+/*display on && off*/
+.off{display: none !important;}
+.on {display:block !important;}
+
+/*screen only*/
+.sr {font-size: 0; width: 0;height: 0;}
+
+/*opacity 0*/
+.op {opacity: 0;}
+
+/*transition*/
+.ts {
+  transition: .3s;
+  -webkit-transition: .3s;
+}
+
+%ts {transition: .3s; -webkit-transition: .3s;}
+
+::-webkit-input-placeholder {
+  color: rgba(255,255,255, .7);
+  text-shadow: 1px 1px 1px #4a4a4a;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  color: rgba(255,255,255, .7);
+  text-shadow: 1px 1px 1px #4a4a4a;
+  text-align: center;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  color: rgba(255,255,255, .7);
+  text-shadow: 1px 1px 1px #4a4a4a;
+  text-align: center;
+}
+
+:-ms-input-placeholder {  
+  color: rgba(255,255,255, .7);
+  text-shadow: 1px 1px 1px #4a4a4a; 
+  text-align: center;
+}

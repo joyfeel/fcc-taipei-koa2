@@ -1,0 +1,46 @@
+.noti-list {
+  padding-top: 30px;
+
+
+  li:last-child a {
+        border-bottom: none;
+  }
+
+  .noti-content {
+    display: block;
+    position: relative;
+    border-bottom: 1px solid #333;
+    color: #000;
+    font-size: 14px;
+    padding: 10px 5px;
+
+    &:hover {
+      background-color: #eee;
+      border-color: #111;
+    }
+  }
+
+  img {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    border-radius: 50%;
+    // vertical-align: baseline;
+    margin-right: 3px;
+  }
+
+  .noti-desc {
+    display: inline-block;
+    width: 250px;
+  }
+
+  .time {
+    display: block;
+    margin-top: 5px;
+    padding-left: 37px;
+
+    > i {
+      padding-left: 10px;
+    }
+  }
+}//.noti-list

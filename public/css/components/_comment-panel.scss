@@ -1,0 +1,11 @@
+.comment-panel {
+  padding: 5px 0;
+  width: 93%;
+  margin:0 0 10px 5px;
+  background-color: #eee;
+  cursor: pointer;
+  &:hover {
+    color: #fff;
+    background-color: #666;
+  }//:hover
+}//.comment-panel

@@ -1,0 +1,38 @@
+.nav-panel {
+  background-color: #fff;
+  width: 100%;
+  position: absolute;
+  top: 48px;
+  right: calc( -100% + 20% );
+
+  a {
+    display: block;
+    color: #000;
+    line-height: 35px;
+    text-indent: 4px;
+    &:hover {
+      background-color: #eee;
+      color: #333;
+    }
+  }
+
+  .noti-link {
+    position: relative;
+
+    > span {
+      position: absolute;
+      top: 4px;
+      left: 11px;
+      width: 12px;
+      height: 12px;
+      font-size: 12px;
+      line-height: 12px;
+      background-color: red;
+      color: #fff;
+      text-align: center;
+      border-radius: 50%;
+      text-indent: 0;
+      // box-shadow: 1px 1px 3px 0 red;
+    }//.noti-link > span
+  } //.noti-link
+} //.nav-panel

@@ -1,0 +1,37 @@
+.comment-list {
+  li {
+    @include cf;
+    width: 93.5%;
+    padding-bottom: 5px;
+    margin: 5px 0;
+    border-bottom: 1px dotted black;
+  }
+
+  img {
+    float: left;
+    display: inline-block;
+    margin: 0 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+
+  .reply-author {
+    float: left;
+    font-style: normal;
+    line-height: 36px;
+
+  }//.reply-author
+
+  .description {
+    float: left;
+    display: inline-block;
+    margin-left: 5px;
+    line-height: 36px;
+  }//.description
+
+  .time {
+    float: right;
+    line-height: 36px;
+  }//.time
+}//.comment-list

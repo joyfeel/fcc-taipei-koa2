@@ -1,0 +1,45 @@
+.hdr-member-panel {
+  @include animated($delay: .85s);
+  position: absolute;
+  top: 0;
+  right: 10px;
+  height: 45px;
+
+  .member-nickname {
+    display: inline-block;
+    line-height: 45px;
+    // width: 100px;
+    color: #fff;
+    margin-right: 3px;
+  }
+
+
+
+  .member-pic {
+    // position: relative;
+    > img {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        vertical-align: middle;
+      }//.member-pic > img
+  }//.member-pic
+} //.hdr-member-panel
+
+
+.noti > i {
+    position: absolute;
+    top: 3px;
+    right: -5px;
+    width: 14px;
+    height: 14px;
+    font-size: 12px;
+    line-height: 14px;
+    background-color: red;
+    font-style: normal;
+    color: #fff;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 1px 1px 3px 0 red;
+} //.noti > i

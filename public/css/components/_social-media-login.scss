@@ -1,0 +1,214 @@
+  .social-media-login {
+    position: relative;
+    b {
+      @include animated;
+      display: block;
+      position: absolute;
+      width: 100%;
+      text-align: center;
+//      top: 19px;
+      top: 12px;
+//      font-family: 'Merriweather', sans-serif;
+      font-family: Helvetica, sans-serif;
+      color: #fff;
+      font-size: 21px;
+      font-weight: 400;
+//      text-shadow: 1px 1px 1px #4a4a4a;
+      text-shadow: 0 1px 0 rgba(0,0,0,0.3);
+      @extend %fadeInUp;
+
+      &:before,&:after {
+        @include bf_af($w:90px,$h:1px);
+        background-color: $subColor;
+        bottom: 10px;
+        box-shadow: 0 1px 1px 0 #4a4a4a;
+      }
+
+      &:before {
+        left: 21px;
+        @include bp(25em,26.8125em) { //400~429px
+          width: 25%;
+          left: 5.8333%;
+        }
+        @include bp(0,24.9375em) { //0~399px
+          width: 25%;
+          left: 3%;
+        }
+      }
+      
+      &:after {
+        right: 21px;
+        @include bp(25em,26.8125em) { //400~429px
+          width: 25%;
+          right: 5.8333%;
+        }
+        @include bp(0,24.9375em) { //0~399px
+          width: 25%;
+          right: 3%;
+        }
+      }
+    
+    }//b
+    
+    b:last-child {
+      top: 100px;
+      font-style: italic;
+      &:before, &:after {
+        @include bf_af($w:35.5555%,$h:1px);
+        
+        @include bp(0,23.75em) { //0~380px
+          width: 38.55555%;
+        }
+      }
+      
+      
+      
+    } 
+
+    ul {
+      display: flex;
+      display: -webkit-flex;
+      flex-flow: row nowrap;
+      justify-content: space-around;
+    }
+    
+    
+    li {
+//      display: block;
+//      width: 20%;
+//      margin-left: 4%;
+//      float: left;
+//      cursor: pointer;
+//      text-align: center;
+//      font-size: 3.5em;  
+//      margin-top: 50px;
+//      text-shadow: 1px 1px 4px #4a4a4a;
+//      color: #ffcc4d;
+//      display: flex;
+//      display: -webkit-flex;
+      flex: 1 0 25%;
+      -webkit-flex: 1 0 25%;
+//      margin: auto;
+      margin-top: 43px;
+    }//li
+    
+    a {
+      display: block;
+      width: 56px;
+      margin: 0 auto;
+      font-size: 3.5em;
+      text-align: center;
+      color: #ffcc4d;
+//      text-shadow: 0 1px 0 rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 2;
+      @include animated($duration:1.5s);
+    }
+    
+    
+    .icon-facebook-2 {
+        color: #3b5998;
+        &:hover,&:active {
+        //transition: all .3s; 
+        text-shadow: none;
+        color: #3b5998;
+        @extend %jello;
+      }
+      i {
+          position: absolute;
+          //background-color: transparent;
+          display: block;
+          width: 39px;
+          height: 50px;
+          top: 2px;
+          left: 9px;
+          background-color: #fff;
+          z-index: -1;
+      }
+      
+//      &:hover > i {
+////        transition: background-color .25s;
+//        z-index: -1;
+//      }
+    } //.icon-facebook-2
+    
+    
+    
+    
+    
+    .icon-twitter-1 {
+      color: #55acee;
+      &:hover, &:active {
+        @extend %jello;
+//        transition: color .4s; 
+        text-shadow: 0 1px 0 rgba(0,0,0,0.3);
+      }
+    }//.icon-twitter-1
+
+    
+    
+    
+    .icon-g-plus-3 {
+      border-radius: 50%;
+      color: #dc4e41;
+      &:hover, &:active {
+        @extend %jello;
+//        transition: all .4s; 
+//        text-shadow: none;
+        box-shadow: 0 1px 0 rgba(0,0,0,0.3);
+      }
+      i {
+          position: absolute;
+//          background-color: transparent;
+          background-color: #fff;
+          display: block;
+          width: 50px;
+          height: 50px;
+          top: 4px;
+          left: 4px;
+          border-radius: 50%;
+          z-index: -1;
+      }
+//      &:hover > i {
+//        background-color: #fff;
+//        transition: background-color .4s;
+//      }  
+    }//.icon-g-plus-3
+
+
+    .icon-github-1 {
+      border-radius: 50%;
+      color: #333;
+      &:hover, &:active {
+      @extend %jello;
+//      transition: color .4s; 
+//      text-shadow: none;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.3);
+      //color: #333;
+//      color: lighten(#492778, 25%)
+      }
+        
+      i {
+          position: absolute;
+//          background-color: transparent;
+          background-color: #fff;
+          display: block;
+          width: 55px;
+          height: 55px;
+          top: 1px;
+          left: 0;
+          border-radius: 50%;
+          z-index: -1;
+        }  
+      
+//      &:hover > i {
+//        background-color: #fff;
+//        transition: background-color .5s;
+//        z-index: -1;
+//      } 
+    } //.icon-github-1
+
+  } //.social-media-login
+
+
+

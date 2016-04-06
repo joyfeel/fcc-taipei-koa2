@@ -4,12 +4,14 @@ import bodyParser from 'koa-bodyparser';
 import logger from 'koa-logger';
 import session from 'koa-session';
 import serve from 'koa-static'
+import historyApiFallback from 'koa-connect-history-api-fallback'
+
 import convert from 'koa-convert';
 
 import Router from 'koa-router'
 import indexRouter from './router/index';
 import userRouter from './router/user';
-import loginRouter from './router/login';
+import adminRouter from './router/admin';
 
 import webpack from 'webpack'
 import WebpackDevMiddleware from "koa-webpack-dev-middleware"
@@ -19,7 +21,12 @@ import webpackConfig from './webpack.config'
 
 const app = new Koa()
 
-app.use(serve(__dirname + '/public'))
+// This rewrites all routes requests to the root /index.html file
+// (ignoring file requests). If you want to implement isomorphic
+// rendering, you'll want to remove this middleware.
+app.use(convert(historyApiFallback({
+  verbose: false
+})))
 
 const compiler = webpack(webpackConfig);
 app.use(convert(WebpackDevMiddleware(compiler, {
@@ -34,6 +41,8 @@ app.use(convert(WebpackHotMiddleware(compiler, {
   heartbeat: 10 * 1000
 })));
 
+app.use(serve(__dirname + '/public'))
+
 app.use(logger());
 app.use(convert(bodyParser()));
 app.keys = ['some secret hurr'];
@@ -41,6 +50,6 @@ app.use(convert(session(app)));
 
 app.use(indexRouter.routes(), indexRouter.allowedMethods());
 app.use(userRouter.routes(), userRouter.allowedMethods());
-app.use(loginRouter.routes(), loginRouter.allowedMethods());
+app.use(adminRouter.routes(), adminRouter.allowedMethods());
 
 export default app

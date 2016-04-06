@@ -1,0 +1,13 @@
+.fcc-login-mainpage {
+  max-width: 360px;
+  width: 85%;
+  height: 371px;
+  @include center;
+//  @include bp(0, 48em){
+  //  top:30px;
+//  }
+  //background-color: rgba(0, 100, 0, 0.3);
+  background-color: rgba(51, 51, 51, 0.3);
+  overflow: hidden;
+  border-radius: 5px;
+}//.fcc-login-mainpage
