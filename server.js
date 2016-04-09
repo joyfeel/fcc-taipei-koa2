@@ -12,6 +12,7 @@ import Router from 'koa-router'
 import indexRouter from './router/index';
 import userRouter from './router/user';
 import adminRouter from './router/admin';
+import authRouter from './router/auth';
 
 import webpack from 'webpack'
 import WebpackDevMiddleware from "koa-webpack-dev-middleware"
@@ -50,6 +51,6 @@ app.use(convert(session(app)));
 
 app.use(indexRouter.routes(), indexRouter.allowedMethods());
 app.use(userRouter.routes(), userRouter.allowedMethods());
-app.use(adminRouter.routes(), adminRouter.allowedMethods());
+app.use(authRouter.routes(), adminRouter.allowedMethods());
 
 export default app
