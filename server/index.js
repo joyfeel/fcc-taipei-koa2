@@ -1,4 +1,3 @@
-//git pull upstream master & & git push origin master .
 import Koa from 'koa'
 import convert from 'koa-convert';
 import path from 'path'
