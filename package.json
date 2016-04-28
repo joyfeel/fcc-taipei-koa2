@@ -1,5 +1,5 @@
 {
-  "name": "webpack-hmr-koa2-boilerplate",
+  "name": "fcc-taipei-koa2",
   "version": "1.0.0",
   "description": "My own template for lazy man!",
   "main": "index.js",
@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/joyfeel/webpack-hmr-koa2-boilerplate.git"
+    "url": "git+https://github.com/joyfeel/fcc-taipei-koa2.git"
   },
   "keywords": [],
   "author": "Joey Chen <joybee210@gmail.com> (https://github.com/joyfeel)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/joyfeel/webpack-hmr-koa2-boilerplate/issues"
+    "url": "https://github.com/joyfeel/fcc-taipei-koa2/issues"
   },
-  "homepage": "https://github.com/joyfeel/webpack-hmr-koa2-boilerplate#readme",
+  "homepage": "https://github.com/joyfeel/fcc-taipei-koa2#readme",
   "dependencies": {
     "babel-polyfill": "6.7.4",
     "faker": "3.1.0",
