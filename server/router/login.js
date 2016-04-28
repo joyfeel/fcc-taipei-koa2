@@ -2,7 +2,7 @@ import Router from 'koa-router'
 import jwt from 'koa-jwt'
 import convert from 'koa-convert';
 
-const jwtSecret = 'test'
+const jwtSecret = process.env.JWT_SECRET
 const router = new Router()
 
 const userInfo = {
@@ -20,13 +20,7 @@ const tokenInfo = () => {
   }
 }
 
-router.get('/admin', async (ctx, next) => {
-  //ctx.response.body = "Login"
-  console.log(ctx.request.body)
-  ctx.response.status = 200
-});
-
-router.post('/admin',
+router.post('/login',
   authenticate,
   async (ctx, next) => {
       console.log(ctx.request.body.email)
@@ -53,4 +47,4 @@ async function authenticate(ctx, next) {
   await next()
 }
 
-export default router;
+export default router

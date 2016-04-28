@@ -1,37 +1,59 @@
 import React from 'react'
-import RegisterPicUpload from '../components/RegisterPicUpload'
+import { Link } from 'react-router'
+import Register from './Register'
 
 export default class InputRegisterForm extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.handleRegister = this.handleRegister.bind(this)
+  }
+  checkStatus(response) {
+    //response.ok === true, (status 200 ~ 299)
+    if (response.ok) {
+      return response
+    } else {
+      let error = new Error(response.statusText)
+      error.response = response
+      throw error
+    }
+  }
+  parseJSON(response) {
+    return response.json()
+  }
+  handleRegister(inputValue) {
+      const [nickname, email, password] = inputValue
+      console.log(nickname)
+      console.log(email)
+      console.log(password)
+
+      fetch('/register', {
+        method: 'post',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          nickname,
+          email,
+          password
+        })
+      })
+      .then(this.checkStatus)
+      .then(this.parseJSON)
+      .then((data) => {
+        console.log(data)
+      })
+      .catch(e => {
+        //console.log(`Catch request fail ${e}`)
+        alert(`Catch request fail ${e}`)
+      })
+  }
   render() {
     return (
-      <form action="" className="input-register-form">
+      <Register onChange={this.handleRegister}>
         <h2>freecodecamp register form</h2>
-        <RegisterPicUpload />
-
-        <h3>註冊暱稱</h3>
-        <label htmlFor="nickname-register">
-          <i className="icon-member-3"></i>
-          <input type="text" name="register_nickname" id="nickname-register" placeholder="nickname" />
-        </label>
-
-        <h3>註冊信箱</h3>
-        <label htmlFor="email-register">
-          <i className="icon-mail-3"></i>
-          <input type="email" name="register_email" id="email-register" placeholder="e-mail" />
-        </label>
-
-        <h3>註冊密碼</h3>
-        <label htmlFor="password-register">
-          <i className="icon-password-2"></i>
-          <input type="password" name="register_password" placeholder="password" id="password-register" />
-          <i className="icon-eye-opened-1"></i>
-        </label>
-
-        <input type="submit" name="submit_register" id="submit-register" />
-
-      </form>
+      </Register>
     )
   }
 }
-
-export default InputRegisterForm

@@ -8,6 +8,11 @@ router.get('/hello', async (ctx, next) => {
   ctx.response.status = 200
 })
 
+router.post('/hello', async (ctx, next) => {
+  ctx.response.body = "Hello World POST"
+  ctx.response.status = 200
+})
+
 router.get('/random-user', async (ctx, next) => {
   let user = faker.helpers.userCard()
   user.avatar = faker.image.avatar()
